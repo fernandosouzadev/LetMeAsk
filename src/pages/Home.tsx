@@ -33,6 +33,10 @@ export function Home(){
             toastMensagem('Sala não existe!')
             return;
         }
+        if(roomRef.val().endedAt){
+            toastMensagem('Sala encerrada')
+            return
+        }
         navigate(`/rooms/${roomRef.key}`);
 
         const roomTitle = database.ref(`rooms/${roomCode}`).once('value', function (snapshot) {

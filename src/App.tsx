@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {AuthContextProvider} from './contexts/AuthContext'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
+import { AdminRoom } from "./pages/AdminRoom";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/rooms/new' element={<NewRoom/>} />
         <Route path='/rooms/:id' element={<Room/>} />
+        <Route path='/admin/rooms/:id' element={<AdminRoom/>} />
       </Routes>
     </AuthContextProvider>
     </Router>
